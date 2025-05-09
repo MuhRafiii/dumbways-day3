@@ -24,7 +24,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-dark-subtle">
+  <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
       <div class="container">
@@ -45,10 +45,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link active" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">My Project</a>
+              <a class="nav-link" href="projects.html">My Project</a>
             </li>
           </ul>
           <button type="button" class="btn btn-dark btn-sm">Contact Me</button>
@@ -56,9 +56,9 @@
       </div>
     </nav>
 
-    <section class="form my-5">
+    <section class="form py-5 bg-dark-subtle">
       <div class="fw-bold fs-1 text-center">GET IN TOUCH</div>
-      <form class=" py-5 w-50 mx-auto">
+      <form class=" py-5 w-50 mx-auto" id="contact-form">
         <div class="mb-4">
           <label for="name" class="form-label mb-0">Name</label>
           <input type="text" class="form-control shadow" id="name" required />
@@ -73,8 +73,8 @@
           <input type="number" class="form-control shadow" id="phone" required/>
         </div>
         <div class="mb-4">
-          <label for="validationCustom04" class="form-label mb-0">Subject</label>
-          <select class="form-select" aria-label="Default select example" required>
+          <label for="subject" class="form-label mb-0">Subject</label>
+          <select class="form-select" id="subject" aria-label="Default select example" required>
             <option selected disabled value="">Choose...</option>
             <option value="1">Subject 1</option>
             <option value="2">Subject 2</option>
@@ -83,14 +83,11 @@
         </div>
         <div class="mb-4">
           <label for="message" class="form-label mb-0">Your Message</label>
-          <textarea class="form-control" placeholder="Write your message" id="floatingTextarea2" style="height: 100px" required></textarea>
+          <textarea class="form-control" placeholder="Write your message" id="message" style="height: 100px" required></textarea>
         </div>
-        <button type="submit" class="btn d-block btn-dark float-end mt-3 py-1 px-4 rounded-pill">Submit</button>
+        <button type="input" onclick="getData(event)" class="btn d-block btn-dark float-end mt-3 py-1 px-4 rounded-pill">Submit</button>
       </form>
     </section>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
 
     <!-- Bootstrap -->
     <script
@@ -98,5 +95,8 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
   </body>
 </html>

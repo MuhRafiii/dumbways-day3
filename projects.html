@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Project</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="img/Logo.png" alt="logo"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="projects.html">My Project</a>
+            </li>
+          </ul>
+          <button type="button" class="btn btn-dark btn-sm">Contact Me</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Form Section -->
+    <section class="form py-5 bg-dark-subtle">
+      <div class="fw-bold fs-1 text-center">ADD MY PROJECT</div>
+      <form class="py-5 w-50 mx-auto" id="project-form">
+        <div class="mb-4">
+          <label for="project-name" class="form-label mb-0">Project Name</label>
+          <input
+            type="text"
+            class="form-control shadow"
+            id="project-name"
+            required
+          />
+        </div>
+        <div class="mb-4 row">
+          <div class="col-6">
+            <label for="start-date" class="form-label mb-0">Start Date</label>
+            <input
+              type="date"
+              class="form-control shadow"
+              id="start-date"
+              required
+            />
+          </div>
+          <div class="col-6">
+            <label for="end-date" class="form-label mb-0">End Date</label>
+            <input
+              type="date"
+              class="form-control shadow"
+              id="end-date"
+              required
+            />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="description" class="form-label mb-0">Description</label>
+          <textarea
+            class="form-control shadow"
+            placeholder="Write here"
+            id="description"
+            style="height: 100px"
+            required
+          ></textarea>
+        </div>
+        <div class="mb-4">
+          <div class="form-label mb-0">Technologies</div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-check my-3">
+                <input
+                  class="form-check-input shadow"
+                  type="checkbox"
+                  value=""
+                  id="checkBox1"
+                />
+                <label class="form-check-label" for="checkBox1">Node Js</label>
+              </div>
+              <div class="form-check my-3">
+                <input
+                  class="form-check-input shadow"
+                  type="checkbox"
+                  value=""
+                  id="checkBox2"
+                />
+                <label class="form-check-label" for="checkBox2">React Js</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-check my-3">
+                <input
+                  class="form-check-input shadow"
+                  type="checkbox"
+                  value=""
+                  id="checkBox3"
+                />
+                <label class="form-check-label" for="checkBox3">Next Js</label>
+              </div>
+              <div class="form-check my-3">
+                <input
+                  class="form-check-input shadow"
+                  type="checkbox"
+                  value=""
+                  id="checkBox4"
+                />
+                <label class="form-check-label" for="checkBox4"
+                  >TypeScript</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="formFile" class="form-label">Upload Image</label>
+          <input
+            class="form-control shadow bg-secondary-subtle"
+            type="file"
+            id="formFile"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          onclick="getAddProject(event)"
+          class="btn d-block btn-dark float-end mt-3 py-1 px-4 rounded-pill"
+        >
+          Submit
+        </button>
+      </form>
+    </section>
+
+    <!-- Project Section -->
+    <section class="form py-5">
+      <div class="fw-bold fs-1 text-center">MY PROJECT</div>
+      <div class="container my-5">
+        <div class="row" id="project-list"></div>
+      </div>
+    </section>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
