@@ -1,7 +1,15 @@
-contacts = [];
+let contacts = [];
 
-// Value dari input
+// Projects Card
+let projects = [];
+
+// Reset form
+function resetForm($id) {
+  document.getElementById($id).reset();
+}
+
 function getData(e) {
+  // Value dari input
   e.preventDefault();
   let name = document.getElementById("name").value;
   let email = document.getElementById("email").value;
@@ -38,14 +46,6 @@ function getData(e) {
 
   resetForm("contact-form");
 }
-
-// Reset form
-function resetForm($id) {
-  document.getElementById($id).reset();
-}
-
-// Projects Card
-let projects = [];
 
 // Function submit
 function getAddProject(e) {
@@ -115,21 +115,21 @@ function generateIcons(techs) {
   return techs.map((tech) => iconMap[tech] || "").join("");
 }
 
-function changeElement() {
-  document.getElementById("project-list").innerHTML = "";
-  for (let i = 0; i < projects.length; i++) {
-    document.getElementById("project-list").innerHTML += `
+const changeElement = () => {
+  const projectList = document.getElementById("project-list");
+  projectList.innerHTML = projects
+    .map(
+      (project) =>
+        `
     <div class="col-4">
       <div class="card mb-3">
         <div class="card-body">
         <img src="https://placehold.co/300x200/png" class="card-img-top mb-2 rounded" alt="example">
-          <h5 class="card-title mb-0">${projects[i].projectName}</h5>
-          <p class="card-text text-secondary">durasi : ${
-            projects[i].duration
-          }</p>
-          <p class="card-text my-3">${projects[i].description}</p>
+          <h5 class="card-title mb-0">${project.projectName}</h5>
+          <p class="card-text text-secondary">durasi : ${project.duration}</p>
+          <p class="card-text my-3">${project.description}</p>
           <div class="d-flex mb-3">
-            ${generateIcons(projects[i].tech)}
+            ${generateIcons(project.tech)}
           </div>
           <div class="d-flex gap-2 justify-content-between">
             <a href="#" class="btn btn-sm btn-dark w-50 rounded">edit</a>
@@ -138,6 +138,34 @@ function changeElement() {
         </div>
       </div>
     </div>
-    `;
-  }
-}
+    `
+    )
+    .join("");
+};
+
+// function changeElement() {
+//   document.getElementById("project-list").innerHTML = "";
+//   for (let i = 0; i < projects.length; i++) {
+//     document.getElementById("project-list").innerHTML += `
+//     <div class="col-4">
+//       <div class="card mb-3">
+//         <div class="card-body">
+//         <img src="https://placehold.co/300x200/png" class="card-img-top mb-2 rounded" alt="example">
+//           <h5 class="card-title mb-0">${projects[i].projectName}</h5>
+//           <p class="card-text text-secondary">durasi : ${
+//             projects[i].duration
+//           }</p>
+//           <p class="card-text my-3">${projects[i].description}</p>
+//           <div class="d-flex mb-3">
+//             ${generateIcons(projects[i].tech)}
+//           </div>
+//           <div class="d-flex gap-2 justify-content-between">
+//             <a href="#" class="btn btn-sm btn-dark w-50 rounded">edit</a>
+//             <a href="#" class="btn btn-sm btn-dark w-50 rounded">delete</a>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//     `;
+//   }
+// }
